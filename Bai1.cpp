@@ -10,7 +10,6 @@ void Nhap(string &st, NgayThang &Nt)
 {
 	cout <<"Nhap ngay thang nam:";
 	getline(cin,st);
-	cout<<"Ngay thang nam: "<< st;
 }
 void LayDMY(string &s, NgayThang &ngay)
 {
@@ -41,10 +40,12 @@ int main()
 	struct NgayThang ngay;
 	string s;
 	Nhap(s,ngay);
+	LayDMY(s,ngay);
 	cout<<endl;
 	int month[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
 	if(ktranhuan(month)) 
 		cout << "Nam nhuan";
+		
 	else
 		cout << "Khong nhuan";
 }
