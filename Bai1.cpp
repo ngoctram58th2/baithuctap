@@ -36,7 +36,22 @@ int TimNN(NgayThang n)
 		std += n.dd;
 		if(ktranhuan) std+1;
 		else std;
+NgayTuSTT(int stt, int year)
+{
+int kq= a + sttNgayTrongNam(x);
+	int year=x.year;
+	if(kq <= 365)
+		return NgayTuSTT(kq,year);
+		else
+			if(NamNhuan(year)==1)
+				if(kq == 366)
+					return NgayTuSTT(kq,year);
+				else
+					return NgayTuSTT(kq-366,year+1);
+			else
+				return 	NgayTuSTT(kq-365,year+1);	
 }
+
 int main()
 {	
 	struct NgayThang ngay;
