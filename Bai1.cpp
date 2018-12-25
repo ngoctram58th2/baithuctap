@@ -5,11 +5,13 @@ using namespace std;
 typedef struct NgayThang
 {
 	int dd,mm,year;
+
 }NgayThang;
 void Nhap(string &st, NgayThang &Nt)
 {
 	cout <<"Nhap ngay thang nam:";
 	getline(cin,st);
+
 }
 void LayDMY(string &s, NgayThang &ngay)
 {
@@ -39,13 +41,12 @@ int main()
 {	
 	struct NgayThang ngay;
 	string s;
+	
 	Nhap(s,ngay);
 	LayDMY(s,ngay);
 	cout<<endl;
-	int month[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
-	if(ktranhuan(month)) 
+	if(ktranhuan(ngay)) 
 		cout << "Nam nhuan";
-		
 	else
 		cout << "Khong nhuan";
 }
