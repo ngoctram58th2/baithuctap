@@ -51,11 +51,11 @@ void DocFile()
 		}
 			fclose(f);
 			db.pop_back();
-	}	
+	}
 }
 
 
-void ThemDB(Contact c)
+/*void ThemDB(Contact c)
 {
 	cout<<"Them danh ba\n";
 	cout<<"So dien thoai: ";
@@ -69,18 +69,18 @@ void ThemDB(Contact c)
 	db.push_back(c);
 }
 
+*/
+void LietKe(){
 
-void LietKe()
-	{
 	Contact c;
-	for (int i = 0; i<sizeof(db);i++)
-		{
-		  cout << "\nSo dien thoai: "<<c.sdt<<endl;
-		  cout << "Ten: "<<c.ten<<endl;
-		  cout << "Gmail: "<<c.gmail<<endl;
-		  cout << "Dia chi: "<<c.diachi<<endl;
-		}
+	for(int i=0 ; i <db.size() ;i++){
+		cout<<"ten la: "<<db[i].ten<<endl;
+		cout<<"sdt la: "<<db[i].sdt<<endl;
+		cout<<"dia chi la: "<<db[i].diachi<<endl;
+		cout<<"gmail la: "<<db[i].gmail<<endl;
+
 	}
+}
 	
 void ThemMoi(Contact c)
 {
@@ -124,22 +124,22 @@ int main()
 	DocFile();
 	LietKe();
 	Contact c;
-		strcpy(c.ten,"pipi");
+		strcpy(c.ten,"sgdfgd");
 		strcpy(c.sdt,"2656565400");
-		strcpy(c.gmail,"asdas@gmail.com");
-		strcpy(c.diachi,"fafafadfa");
+		strcpy(c.gmail,"dfsf@gmail.com");
+		strcpy(c.diachi,"fsfsd");
 	ThemMoi(c);
 	Contact c1;
-		strcpy(c1.ten,"pipivdzvs");
+		strcpy(c1.ten,"sdfsd");
 		strcpy(c1.sdt,"265650056565");
-		strcpy(c1.gmail,"asdaxzzs@gmail.com");
-		strcpy(c1.diachi,"nha trang");
+		strcpy(c1.gmail,"sfsdf@gmail.com");
+		strcpy(c1.diachi,"dfssd");
 	ThemMoi(c1);
 	cout<<"DB";
 	LietKe();
 	Contact c2;
-	ThemDB(c2);
-	cout<<"Cap nhat";
+	cout<<"-------------------------";
+	cout<<"\nCap nhat";
 	CapNhat(c2);
 	GhiVaoFile();
 }
