@@ -31,31 +31,31 @@ vector<Contact> db;
 void GhiVaoFile()
 {
 
-	FILE*f=fopen("db.dat","wb");
+	int size = db.size();
+	FILE * f=fopen("db.dat","wb");
 	Contact c;
-	for(int i = 0 ; i < db.size() ; i++)
-		fwrite(&db[i],sizeof(db),1,f);	
+	for(int i=0; i <size; i++)
+		{
+			c=db[i];
+			fwrite(&c, sizeof(Contact),1,f);
+		}
 		fclose(f);
 }
 
 void DocFile()
 {
-	db.clear();
-	FILE*f =fopen("db.dat","rb");
-	if( f != NULL)
-	{
-		while(!feof(f)){
+FILE *f = fopen("db.dat","rb");
+	for(int i=0;i<db.size();i++)
+		{
 			Contact c;
-			fread(&c,sizeof(Contact),1,f);	
+			fread(&c,sizeof(c),1,f);
 			db.push_back(c);
 		}
-			fclose(f);
-			db.pop_back();
+	fclose(f);
 	}
-}
 
 
-/*void ThemDB(Contact c)
+void ThemDB(Contact c)
 {
 	cout<<"Them danh ba\n";
 	cout<<"So dien thoai: ";
@@ -69,32 +69,32 @@ void DocFile()
 	db.push_back(c);
 }
 
-*/
-void LietKe(){
 
+void LietKe()
+	{
 	Contact c;
-	for(int i=0 ; i <db.size() ;i++){
-		cout<<"ten la: "<<db[i].ten<<endl;
-		cout<<"sdt la: "<<db[i].sdt<<endl;
-		cout<<"dia chi la: "<<db[i].diachi<<endl;
-		cout<<"gmail la: "<<db[i].gmail<<endl;
-
+	DocFile();
+	for (int i = 0; i<sizeof(db);i++)
+		{
+		  cout << "\nSo dien thoai: "<<c.sdt<<endl;
+		  cout << "Ten: "<<c.ten<<endl;
+		  cout << "Gmail: "<<c.gmail<<endl;
+		  cout << "Dia chi: "<<c.diachi<<endl;
+		}
 	}
-}
-	
 void ThemMoi(Contact c)
 {
-	db.push_back(c);
-	GhiVaoFile();
+	  db.push_back(c);
+	  GhiVaoFile();
 }
-
-void CapNhat(Contact c)
+void CapNhat()
 {
+	Contact c;
 	FILE*f=fopen("db.dat","wb");
 //	Contact cmoi;
 	ThemMoi(c);
 	LietKe();
-	for(int i = 0 ; i < sizeof(db) ; i++)
+	for(int i = 0 ; i < db.size() ; i++)
 		fwrite(&db[i],sizeof(db),1,f);	
 		fclose(f);
 }
@@ -121,26 +121,13 @@ TimTheoTen(char*ten);
 //*/
 int main()
 {
-	DocFile();
-	LietKe();
-	Contact c;
-		strcpy(c.ten,"sgdfgd");
-		strcpy(c.sdt,"2656565400");
-		strcpy(c.gmail,"dfsf@gmail.com");
-		strcpy(c.diachi,"fsfsd");
+	Contact c,c1;
+	Nhap();
 	ThemMoi(c);
-	Contact c1;
-		strcpy(c1.ten,"sdfsd");
-		strcpy(c1.sdt,"265650056565");
-		strcpy(c1.gmail,"sfsdf@gmail.com");
-		strcpy(c1.diachi,"dfssd");
-	ThemMoi(c1);
-	cout<<"DB";
 	LietKe();
-	Contact c2;
-	cout<<"-------------------------";
-	cout<<"\nCap nhat";
-	CapNhat(c2);
+	ThemDB(c1);
+	cout<<"Cap nhat";
+	CapNhat();
 	GhiVaoFile();
 }
 	
