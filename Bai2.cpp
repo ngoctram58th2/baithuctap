@@ -11,7 +11,7 @@ typedef struct NgayThang
 int month[13]={0,31,28,31,30,31,30,31,31,30,31,30,31};
 void Nhap(string &stt, NgayThang &date)
 {
-	cout << "nhap du lieu: (phan biet boi dau /)"; 
+	cout << "nhap du lieu: (phan biet boi dau /): "; 
 	getline(cin, stt);
 	cout << "ngay thang vua nhap: " << stt;
 }
@@ -69,32 +69,44 @@ NgayThang NgayTuSTT(int n,int year)
 	nt.year = year;
 	return nt;
 }
-NgayThang TongNgayThang(NgayThang n,int x) //x,a
+NgayThang TongNgayThang(NgayThang n,int x)
 {
 	
 	int kq= x + STT(n);
 	int year=n.year;
 	if(x <= 365)
-	if(kq <= 365)
-		return NgayTuSTT(kq,year);
-	else
-		if(ktnhuan(year)==1)
-			if(kq == 366)
-				return NgayTuSTT(kq,year);
-			else
-				return NgayTuSTT(kq-366,year+1);
+		if(kq <= 365)
+			return NgayTuSTT(kq,year);
 		else
-			return 	NgayTuSTT(kq-365,year+1);
-
+			if(ktnhuan(year)==1)
+				if(kq == 366)
+					return NgayTuSTT(kq,year);
+				else
+					return NgayTuSTT(kq-366,year+1);
+			else
+				return 	NgayTuSTT(kq-365,year+1);
+	
 	else
 		if(ktnhuan(year)==1)
 			return NgayTuSTT(kq+366,year+1);
 		else
-			return NgayTuSTT(kq+365,year+1); 
+			return NgayTuSTT(kq+365,year+1);
 }
+
+NgayThang TruNgayThang(NgayThang n,int x)
+{
+	int kq= STT(n)-x;
+	int year=n.year;
+	if(x<=365)
+		if(kq<=365)
+			return NgayTuSTT(kq.year);
+		else
+			
+}
+
 int main()
 {
-	struct NgayThang ngay;
+	NgayThang ngay;
 	string st;
 	int x;
 	Nhap(st, ngay);
@@ -102,5 +114,5 @@ int main()
 	cout << "\nSTT ngay trong nam la: " << STT(ngay);
 	cout<<"\nNhap vao so nguyen can tinh: ";
 	cin>> x;
-	TongNgayThang(ngay,x);
+	cout<<TongNgayThang(ngay,x).dd<<"/"<<TongNgayThang(ngay,x).mm<<"/"<<TongNgayThang(ngay,x).year;
 }
