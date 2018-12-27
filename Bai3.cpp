@@ -38,15 +38,15 @@ bool KiemTra (string A,string B){
 void LuuDiem(string ten, int diem)
 {	
 	fstream f;
-	f.open("luudiem.txt", ios::out | ios::app);
+	f.open("luudiem.txt", ios::out | ios::app);//out: mo 1 file de ghi, app:khong ghi de
 	f << ten << "\t" << diem << endl;
 	f.close();
 }
 
-void Xuat(){
+void Xuat()//dung de xuat diem ra man hinh
+{
 	string s;
 		ifstream f2("luudiem.txt");
-		// vong lap
 		getline(f2, s);// lay ten va diem tu file luudiem
 		do{
 			cout << s << endl;
@@ -66,10 +66,10 @@ void DocDe()
 	for(int i=0; i< SL; i++)
 	{
 		getline(f,s); T1.CauHoi=s;
-			cout<<s<<endl;
+			cout<<s<<endl;//xuat dong cau hoi
 			getline(f,s);
-			T1.A=s;
-			cout<<s<<endl;
+			T1.A=s;//lay dong dap an A
+			cout<<s<<endl;//Xuat dap an A
 			getline(f,s);	
 			T1.B=s;
 			cout<<s<<endl;
@@ -78,22 +78,22 @@ void DocDe()
 			cout<<s<<endl;
 			getline(f,s);
 			T1.DA=s;
-			cout<<"Dap an(Nhap A,B,C):  ";
-			getline(cin,Ans);
-			if(KiemTra(T1.DA,Ans) == true)
+			cout<<"Dap an(Nhawp A,B,C):  ";
+			getline(cin,Ans);			if(KiemTra(T1.DA,Ans) == true)
 			{
 				cout << "Dap an dung."<<endl;
-				diem+=2;
+				diem+=2;//cong them 2 diem neu tra loi dung
 				cout<<"-----------------------------------\n";
 			}
 			else
 			{
 				cout<<"Dap an sai."<<endl;
-				diem+=0;
+				diem+=0;// khong cong diem neu tra loi sai
 				cout<<"Dap an dung la: ";
 				T1.DA=s;
 				cout<<s<<endl;
 				cout<<"-----------------------------------\n";
+			
 			}
 
 	}
@@ -108,12 +108,6 @@ void DocDe()
 	if(xem==1)
 		Xuat();
 }
-
-
-
-
-
-
 	
 int main()
 {
