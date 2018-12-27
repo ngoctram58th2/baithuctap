@@ -18,15 +18,16 @@ typedef struct Contact
 	char diachi[50];
 	bool gioitinh;
 }Contact;
-void Nhap()
+vector<Contact>db; 
+
+void DanhBa(Contact c)
 {
-	Contact c;
-	strcpy(c.ten,"abc");
-	strcpy(c.sdt,"4564645");
-	strcpy(c.gmail,"abcs@gmail.com");
-	strcpy(c.diachi,"ryhr64465");
+ 	strcpy(c.ten,"hfgh");
+	strcpy(c.sdt,"46564");
+	strcpy(c.gmail,"rtyrty");
+	strcpy(c.diachi,"fafafadfa");
+	db.push_back(c);
 }
-vector<Contact> db;
 
 void GhiVaoFile()
 {
@@ -57,42 +58,41 @@ FILE *f = fopen("db.dat","rb");
 
 void ThemDB(Contact c)
 {
-	cout<<"Them danh ba\n";
-	cout<<"So dien thoai: ";
-	cin.getline(c.sdt,11);
-	cout<<"Ten: ";
-	cin.getline(c.ten,20);
-	cout<<"Gmail: ";
-	cin.getline(c.gmail,20);
-	cout<<"Dia chi: ";
-	cin.getline(c.diachi,50);
+
+	strcpy(c.ten,"fsdfsd");
+	strcpy(c.sdt,"423535");
+	strcpy(c.gmail,"rtyrty");
+	strcpy(c.diachi,"fafafadfa");
 	db.push_back(c);
 }
 
 
 void LietKe()
 	{
-	Contact c;
-	DocFile();
-	for (int i = 0; i<sizeof(db);i++)
+		
+	for (int i = 0; i<db.size();i++)
 		{
-		  cout << "\nSo dien thoai: "<<c.sdt<<endl;
-		  cout << "Ten: "<<c.ten<<endl;
-		  cout << "Gmail: "<<c.gmail<<endl;
-		  cout << "Dia chi: "<<c.diachi<<endl;
+		  cout << "\nSo dien thoai: "<<db[i].sdt<<endl;
+		  cout << "Ten: "<<db[i].ten<<endl;
+		  cout << "Gmail: "<<db[i].gmail<<endl;
+		  cout << "Dia chi: "<<db[i].diachi<<endl;
 		}
 	}
+//them moi contact vao dl
 void ThemMoi(Contact c)
 {
 	  db.push_back(c);
 	  GhiVaoFile();
 }
-void CapNhat()
+void CapNhat() 
+//void CapNhat(Contact c);
+//tim contact, co sdt
+//cap nhat c vao m
 {
 	Contact c;
 	FILE*f=fopen("db.dat","wb");
-//	Contact cmoi;
-	ThemMoi(c);
+	cout<<"\n------------------------------\n";
+	cout <<"Danh ba sau khi cap nhat";
 	LietKe();
 	for(int i = 0 ; i < db.size() ; i++)
 		fwrite(&db[i],sizeof(db),1,f);	
@@ -101,15 +101,11 @@ void CapNhat()
 
 
 
-/*them moi contact vao dl
+/*
 //them vao du lieu
 //ghi du lieu vao file
 int LietKeDB();
 //in cac phan tu cua db ra man hinh
-void CapNhat(Contact c);
-//tim contact, co sdt
-//cap nhat c vao m
-//ghi dl vao file
 void XoaContact(char*sdt);
 //tim contact m co sdt trong db
 //xoa contact m
@@ -122,12 +118,13 @@ TimTheoTen(char*ten);
 int main()
 {
 	Contact c,c1;
-	Nhap();
+	strcpy(c.ten,"hfgh");
+	strcpy(c.sdt,"46564");
+	strcpy(c.gmail,"rtyrty");
+	strcpy(c.diachi,"fafafadfa");
 	ThemMoi(c);
-	LietKe();
 	ThemDB(c1);
-	cout<<"Cap nhat";
+	LietKe();
 	CapNhat();
-	GhiVaoFile();
 }
 	
