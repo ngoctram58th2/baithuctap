@@ -1,0 +1,26 @@
+5
+1.3+4=?
+A. 7
+B. 10
+C. 12
+A
+2. 9-9=?
+A. 5
+B. 18
+C. 0
+C
+3. Tu giac co bao nhieu canh?
+A. 5
+B. 4
+C. 3
+B
+4. Tam giac co bao nhieu goc?
+A. 3
+B. 4
+C. 5
+A
+5. Tong cac goc cua tam giac?
+A. 360
+B. 720
+C. 180
+C
