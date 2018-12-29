@@ -5,8 +5,7 @@ using namespace std;
 
 fstream fi;
 
-
-void DocFile(int a[10][10],int n)
+void DocFile(int a[10][10],int n)//Doc file
 {
 	for(int i = 0; i < n; i++)
 		for(int j=0;j < n;j++)
@@ -14,7 +13,7 @@ void DocFile(int a[10][10],int n)
 	fi.close();
 }
 
-void XuatDoThi(int a[10][10],int n)
+void XuatDoThi(int a[10][10],int n) //xuat ra man hinh
 	{
 		for(int i = 0; i < n; i++)
 		{
@@ -23,7 +22,7 @@ void XuatDoThi(int a[10][10],int n)
 			cout<<endl;
 		}
 	}
-void TaoMoi(int a[10][10], int &n)
+void TaoMoi(int a[10][10], int &n)//tao moi 1 mang 2 chieu
 {
 	cout<<"Nhap n: ";
 	cin>>n;
@@ -43,6 +42,17 @@ void TaoMoi(int a[10][10], int &n)
 	fi.close();
 }
 
+typedef struct Cap
+{
+	int Dinh;
+	int Tong;
+}Cap;
+
+DuongDiNN()
+{
+	
+}
+
 int main()
 {
 	int n;
@@ -54,3 +64,10 @@ int main()
 	XuatDoThi(a,n);
 	fi.close();
 }
+
+/*tao 1 bien di
+Xet cac dinh chua duoc chon
+Kiem tra xem co duong di tu dinh duoc chon toi dinh con lai
+Neu co duong di -> gan dinh dang xet 
+*/
+
