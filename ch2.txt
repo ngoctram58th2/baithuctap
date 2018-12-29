@@ -1,16 +1,26 @@
-3
-1.Green la gi?
-A.Vang
-B.Xanh la
-C.Cam
+5
+1. Bai "Song" cua nha tho nao?
+A To Huu
+B Xuan Quynh
+C Xuan Dieu
 B
-2.9+1=?
-A.10
-B.12
-C.8
+2. Truyen Kieu viet ve ai?
+A. Lao Hac
+B. Thuy Kieu
+C. Pi
 A
-3.con ga may chan?
-A.4
-B.10
-C.2
+3. Chi Pheo o lang nao?
+A. Lang La
+B. Vu Dai
+C. Dong LOc
+C
+4. Quang Trung la gi voi Nguyen Hue?
+A. Vo chong
+B. Anh em
+C. La mot
+C
+5. Luong nuoc trong co the nguoi la bao nhieu?
+A. 45
+B. 10
+C. 70
 C
