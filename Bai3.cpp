@@ -20,11 +20,6 @@ typedef struct TN
 	string DA;
 	
 }TN;
-typedef struct Nguoi
-{
-	string Ten;
-	int Diem;
-}Nguoi;
 
 vector<TN> ds;
 
@@ -79,7 +74,8 @@ void DocDe1()
 			getline(f,s);
 			T1.DA=s;
 			cout<<"Dap an(Nhap A,B,C):  ";
-			getline(cin,Ans);			if(KiemTra(T1.DA,Ans) == true)
+			getline(cin,Ans);			
+			if(KiemTra(T1.DA,Ans) == true)
 			{
 				cout << "Dap an dung."<<endl;
 				diem+=2;//cong them 2 diem neu tra loi dung
