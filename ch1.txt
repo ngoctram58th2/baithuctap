@@ -1,4 +1,4 @@
-3
+5
 1.Green la gi?
 A.Vang
 B.Xanh la
@@ -9,8 +9,18 @@ A.10
 B.12
 C.8
 A
-3.con ga may chan?
+3.Con ga may chan?
 A.4
 B.10
 C.2
 C
+4.10x2=?
+A.20
+B.8
+C,12
+A
+5.Chim gi khong biet bay?
+A.Hoa mi
+B.Chim canh cut
+C.Bo cau
+B
