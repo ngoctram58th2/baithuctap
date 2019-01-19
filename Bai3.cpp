@@ -57,36 +57,36 @@ void DocDe1()
 	int SL, diem, xem;
 	string s, Ans, ten; //luu bien s kieu string
 	getline(f,s); 
-	SL=atoi(s.c_str()); //doi tu string sang kieu int
+	SL = atoi(s.c_str()); //doi tu string sang kieu int
 	for(int i=0; i< SL; i++)
 	{
 		getline(f,s); T1.CauHoi=s;
-			cout<<s<<endl;//xuat dong cau hoi
+			cout << s << endl;//xuat dong cau hoi
 			getline(f,s);
-			T1.A=s;//lay dong dap an A
-			cout<<s<<endl;//Xuat dap an A
+			T1.A = s;//lay dong dap an A
+			cout << s << endl;//Xuat dap an A
 			getline(f,s);	
-			T1.B=s;
+			T1.B = s;
+			cout << s << endl;
+			getline(f,s);
+			T1.C = s;
 			cout<<s<<endl;
 			getline(f,s);
-			T1.C=s;
-			cout<<s<<endl;
-			getline(f,s);
-			T1.DA=s;
+			T1.DA = s;
 			cout<<"Dap an(Nhap A,B,C):  ";
 			getline(cin,Ans);			
 			if(KiemTra(T1.DA,Ans) == true)
 			{
 				cout << "Dap an dung."<<endl;
-				diem+=2;//cong them 2 diem neu tra loi dung
+				diem += 2;//cong them 2 diem neu tra loi dung
 				cout<<"-----------------------------------\n";
 			}
 			else
 			{
 				cout<<"Dap an sai."<<endl;
-				diem+=0;// khong cong diem neu tra loi sai
+				diem += 0;// khong cong diem neu tra loi sai
 				cout<<"Dap an dung la: ";
-				T1.DA=s;
+				T1.DA = s;
 				cout<<s<<endl;
 				cout<<"-----------------------------------\n";
 			
@@ -213,19 +213,23 @@ void DocDe3()
 		Xuat();
 }
 
-int main()
+void ChonDe()
 {
 	int sode;
-	cout<<"Welcome! "
+	cout<<"Welcome! ";
 	cout<<"Moi ban chon de(co 3 de): ";
 	cin>>sode;
 	fflush(stdin); //xoa bo nho dem
-	if(sode==1)
+		if(sode==1)
 		DocDe1();
 	else 
 		if(sode==2)
 			DocDe2();
 		else
 			DocDe3();
-	
+}
+
+int main()
+{
+	ChonDe();
 }
