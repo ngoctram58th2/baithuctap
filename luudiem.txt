@@ -1,9 +1,2 @@
-Phuong	0
-phuong	2
-nha	2
-	1
-	1
-	1
-	1
-	3
-	2
+
+Ngoc Tram	9
