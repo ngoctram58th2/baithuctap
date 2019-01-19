@@ -97,10 +97,6 @@ NgayThang TruNgayThang(NgayThang n,int x)
 {
 	int kq= STT(n)-x;
 	int year=n.year;
-	if(x<=365)
-		if(kq<=365)
-			return NgayTuSTT(kq.year);
-		else
 			
 }
 
