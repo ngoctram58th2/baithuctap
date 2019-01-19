@@ -43,24 +43,24 @@ void GhiVaoFile()//ghi du lieu vao file
 }
 void Them(Contact c) //them vao du lieu va xuat ra man hinh
 {
-	  db.push_back(c);
+	  db.push_back(c);//them 1 gia tri cho vecto
 	  GhiVaoFile();
 }
 void DanhBa()
 {
-	Contact c,c1;
- 	strcpy(c1.ten,"bo");
-	strcpy(c1.sdt,"054365465");
-	strcpy(c1.gmail,"bo@gmail.com");
-	strcpy(c1.diachi,"59 Nguyen Dinh Chieu");
-	Them(c1);
+	Contact c;
+ 	strcpy(c.ten,"bo");
+	strcpy(c.sdt,"054365465");
+	strcpy(c.gmail,"bo@gmail.com");
+	strcpy(c.diachi,"59 Nguyen Dinh Chieu");
+	Them(c);
 	strcpy(c.ten,"uyen phuong");
 	strcpy(c.sdt,"035463214");
 	strcpy(c.gmail,"phuong@gmail.com");
 	strcpy(c.diachi,"59 Nguyen Dinh Chieu");
 	Them(c);
 	strcpy(c.ten,"thu");
-	strcpy(c.sdt,"06435345");
+	strcpy(c.sdt,"0643534533");
 	strcpy(c.gmail,"thu@gmail.com");
 	strcpy(c.diachi,"24 Doan Tran Nghiep");
 	Them(c);
@@ -85,7 +85,7 @@ for(int i=0;i<db.size();i++)
 			if(strcmp(db[i].sdt,sd)==0)// so sanh sdt can tim voi sdt trong danh ba
 				db.erase(db.begin()+i);//xoa db da tim duoc
 	cout<<"Cap nhat lai danh ba sau khi xoa: ";
-	LietKe();	//xuat ra cac danh ba con lai
+	CapNhat();	//xuat ra cac danh ba con lai
 }
 
 void ThemDB(Contact c)//them vao 1 danh ba
@@ -160,7 +160,7 @@ TimTheoTen(char*ten);
 //*/
 int main()
 {
-	Contact c,c1;
+	Contact c;
 	//Danh ba co san
 	ThemDB(c);//them 1 danh ba moi
 	DanhBa();
@@ -169,8 +169,8 @@ int main()
 	cout<<"Tim kiem theo ten(bo): "<<endl;
 	TimTheoTen("bo");
 	cout<<"-----------------------------\n";
-	cout<<"Xoa danh ba co sdt 06435345\n";
-	Xoa("06435345");
+	cout<<"Xoa danh ba co sdt 0643534533\n";
+	Xoa("0643534533");
 	
 }
 	
